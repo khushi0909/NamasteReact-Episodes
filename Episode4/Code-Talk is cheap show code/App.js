@@ -25,7 +25,7 @@ const Header = () => {
 
         }
 
-        const resObj = {                    "info": {
+        const resData = {                    "info": {
             "id": "618199",
             "name": "Sweetish House Mafia",
             "cloudinaryImageId": "lqfdpw89yksgjxmdvkae",
@@ -37,14 +37,14 @@ const Header = () => {
             ],}}
 
         const Restrauntcard = (props) => {  // or {resName , cuisine}
-                console.log(props)              // const {resName,cuisine} =props
+                             const {resData} =props
             return(
                 <div className="res-card">
                         <img className="res-logo" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/d7a1d41f05ad83ff8ec92fc7c5982b67"/>
-                        //? {resName}
-                        <h3>{props.resName}</h3>               
+                        {/* //? {resName} */}
+                        <h3>{resData.info.name}</h3>               
                                   <h4>4.3 stars</h4>
-                        <h4>{props.cuisine}</h4>
+                        <h4>{resData.info.cuisines}</h4>
                         <h4>Kandivali East</h4>
 
 
@@ -59,7 +59,7 @@ const Header = () => {
                 <div className = "body">
                     <div className="search">Search</div>
                     <div className="res-container">
-                        <Restrauntcard resName="meghna foods" cuisine="icecream"/>
+                        <Restrauntcard resData = {resData}/>
                         {/* <Restrauntcard/>
                         <Restrauntcard/>
                         <Restrauntcard/>
