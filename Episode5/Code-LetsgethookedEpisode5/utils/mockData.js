@@ -1,4 +1,4 @@
-const resData = [
+let resData = [
        
     {
       "info": {
@@ -14,7 +14,7 @@ const resData = [
           "Mexican",
           "Beverages"
         ],
-        "avgRating": 4.2,
+        "avgRating": 3.2,
         "feeDetails": {
           "restaurantId": "389678",
           "fees": [
@@ -33,7 +33,7 @@ const resData = [
           "totalFee": 6400
         },
         "parentId": "216056",
-        "avgRatingString": "4.2",
+        "avgRatingString": "3.2",
         "totalRatingsString": "1K+",
         "promoted": true,
         "adTrackingId": "cid=6654885~p=2~eid=00000188-025a-2e1b-3d67-bb8000710247~45995",
@@ -230,7 +230,127 @@ const resData = [
         "text": "RESTAURANT_MENU",
         "type": "DEEPLINK"
       }
+    },{
+    "info": {
+      "id": "70697",
+      "name": "Theobroma",
+      "cloudinaryImageId": "wgadzsae4z8koodcphyc",
+      "locality": "Malad Borivali Area",
+      "areaName": "Borivali",
+      "costForTwo": "₹800 for two",
+      "cuisines": [
+        "Bakery",
+        "Desserts"
+      ],
+      "avgRating": 4.5,
+      "feeDetails": {
+        "restaurantId": "70697",
+        "fees": [
+          {
+            "name": "BASE_DISTANCE",
+            "fee": 3000
+          },
+          {
+            "name": "BASE_TIME"
+          },
+          {
+            "name": "ANCILLARY_SURGE_FEE"
+          }
+        ],
+        "totalFee": 3000
+      },
+      "parentId": "1040",
+      "avgRatingString": "4.5",
+      "totalRatingsString": "10K+",
+      "promoted": true,
+      "adTrackingId": "cid=6706494~p=2~eid=00000188-05c0-a3e8-3e99-3f0a00e40270~45995",
+      "sla": {
+        "deliveryTime": 21,
+        "lastMileTravel": 1.7,
+        "serviceability": "SERVICEABLE",
+        "slaString": "21 mins",
+        "lastMileTravelString": "1.7 km",
+        "iconType": "ICON_TYPE_EMPTY"
+      },
+      "availability": {
+        "nextCloseTime": "2023-05-11 00:00:00",
+        "opened": true
+      },
+      "badges": {
+        "imageBadges": [
+          {
+            "imageId": "newg.png",
+            "description": "Gourmet"
+          }
+        ]
+      },
+      "isOpen": true,
+      "type": "F",
+      "badgesV2": {
+        "entityBadges": {
+          "imageBased": {
+            "badgeObject": [
+              {
+                "attributes": {
+                  "imageId": "newg.png",
+                  "description": "Gourmet"
+                }
+              }
+            ]
+          },
+          "textExtendedBadges": {
+            
+          },
+          "textBased": {
+            
+          }
+        }
+      },
+      "aggregatedDiscountInfoV3": {
+        "header": "10% OFF",
+        "subHeader": "ABOVE ₹159",
+        "discountTag": "FLAT DEAL"
+      },
+      "orderabilityCommunication": {
+        "title": {
+          
+        },
+        "subTitle": {
+          
+        },
+        "message": {
+          
+        },
+        "customIcon": {
+          
+        }
+      },
+      "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+          "lottie": {
+            
+          },
+          "video": {
+            
+          }
+        }
+      },
+      "reviewsSummary": {
+        
+      },
+      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT"
+    },
+    "analytics": {
+      
+    },
+    "cta": {
+      "link": "swiggy://menu?restaurant_id=70697",
+      "text": "RESTAURANT_MENU",
+      "type": "DEEPLINK"
     }
+  }
     ]
 
     export default resData;

@@ -89,7 +89,8 @@
     flex-wrap:wrap;
     justify-content: space-around;
 }
-.search{
+.filter{
 
     padding:10px;
+    cursor:pointer;
 }

@@ -50,5 +50,13 @@ Footer
 
         -Named Export/Import
 
-        export const Component
+        export const Component;
+        import {Component} from "path"
+
+
+
+        #React Hooks
+        (Normal JS utility Functions )
+        -useState()- super powerful State Varables in React 
+        -useEffect()
 

@@ -6,7 +6,16 @@ const Body = () => {
 
     return(
         <div className = "body">
-            <div className="search">Search</div>
+            <div className="filter">
+                    <button className="filter-btn" 
+                    onClick = {()=>{
+                        resData = resData.filter(
+                            (res) => res.info.avgRating>4
+                            );
+                            console.log(resData);
+                            }}>
+                                 Top Rated Restraunts</button>
+             </div>
             <div className="res-container">
               {
                     resData.map((restraunt )=> (
