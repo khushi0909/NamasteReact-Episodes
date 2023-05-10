@@ -60,3 +60,8 @@ Footer
         -useState()- super powerful State Varables in React 
         -useEffect()
 
+
+        when we were using the filter method without hook ,it was giving us the result in consolelog but was not updating the ui ,but if we use useStat and set method of it ,it updates the ui also,so this is due to state variable when we were using normal variable it was not updating 
+
+        whenever state variable changes react will rerender my component 
+
