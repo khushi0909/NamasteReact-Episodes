@@ -37,3 +37,18 @@ Footer
         -Links
         -Address
         -contact
+
+
+        # Two Types of Export and Import 
+
+        -Default Export/Import
+        export default jjjj
+
+        export default Component;
+        import Component from "path";
+
+
+        -Named Export/Import
+
+        export const Component
+
