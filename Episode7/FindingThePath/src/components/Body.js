@@ -3,6 +3,7 @@ import Restrauntcard from "./Restrauntcard";
 import resDataa from "../../utils/mockData";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 function filterData(searchText,resData) {
@@ -44,17 +45,7 @@ const Body = () => {
     }
     console.log("render");
 
-    //conditional Rendering 
-    //if restaurant is empty => shimmer UI
-    //if restaurant has data => actual data UI 
 
-
-    //not render component (Early return)
-
-    // if(!resDataAll)return null;
-
-    // if(resDataFiltered?.length === 0)
-    // return <h1>No restaurant match your Filter!!</h1>
 
                   return resDataAll.length === 0 ? (
                   <Shimmer/>
@@ -101,7 +92,10 @@ const Body = () => {
                               <div className="res-container">
                                 {
                                       resDataFiltered.map((restraunt )=> (
+                                        <Link key={restraunt.data.id} to = {"/restaurant/" + restraunt.data.id}>
                                         <Restrauntcard resData={restraunt.data} />
+
+                                         </Link>
                                         )       )
 
                                 } 

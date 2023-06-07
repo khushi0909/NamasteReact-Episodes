@@ -32,9 +32,12 @@ const Body = () => {
     useEffect(() => {
     getRestaurants()
 
+      // console.log("useEffect");
     },[])
 
     async function getRestaurants(){
+      // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING")
+      // const data = await fetch ("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5270362&lng=77.13593279999999&restaurantId=24210")
       const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING")
       const json = await data.json()
       console.log(json)
@@ -51,10 +54,10 @@ const Body = () => {
 
     //not render component (Early return)
 
-    // if(!resDataAll)return null;
+    if(!resDataAll)return null;
 
-    // if(resDataFiltered?.length === 0)
-    // return <h1>No restaurant match your Filter!!</h1>
+    if(resDataFiltered?.length === 0)
+    return <h1>No restaurant match your Filter!!</h1>
 
                   return resDataAll.length === 0 ? (
                   <Shimmer/>
@@ -63,7 +66,7 @@ const Body = () => {
                             <>  <div className="filter">
                                       <button className="filter-btn" 
                                       onClick = {()=>{ 
-                                        const   filteredresData = resDataAll.filter(
+                                        const   filteredresData = resData.filter(
                                               (res) => res.data.avgRating>4
                                               );
                                               setResDataFiltered(filteredresData);
@@ -81,7 +84,7 @@ const Body = () => {
                               onChange={(e) => {
                                 setSearchText(e.target.value)
                               }}/>
-                              <button clasksName="search-btn"
+                              <button className="search-btn"
                               // need to filter the data 
                               onClick={() => {
                                 const data = filterData(searchText,resDataAll);

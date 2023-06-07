@@ -4,8 +4,6 @@
   "description": "this is namaste react episode 2",
   "main": "App.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -25,7 +23,6 @@
   "homepage": "https://github.com/khushi0909/NamasteReact-Episodes#readme",
   "devDependencies": {
     "parcel": "^2.8.3",
-    "parcel-bundler": "^1.12.5",
     "process": "^0.11.10"
   },
   "dependencies": {
