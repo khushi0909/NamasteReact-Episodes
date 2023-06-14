@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../../utils/constant";
 import { useState,useEffect } from "react";
+import React from "react";
 // const loggedInUser = () => {
 //     //API call to check authentications
 //     return false;

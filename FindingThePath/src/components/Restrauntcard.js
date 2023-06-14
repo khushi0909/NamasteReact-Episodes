@@ -1,4 +1,5 @@
 import { CDN_URL } from "../../utils/constant";
+import React from "react";
 
 const Restrauntcard = (props) => {  // or {resName , cuisine}
     const {resData} = props;

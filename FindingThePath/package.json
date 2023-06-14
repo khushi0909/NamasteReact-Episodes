@@ -24,13 +24,12 @@
   },
   "homepage": "https://github.com/khushi0909/NamasteReact-Episodes#readme",
   "devDependencies": {
-    "parcel": "^2.8.3",
     "parcel-bundler": "^1.12.5",
     "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.12.0"
+    "react-router-dom": "^6.11.2"
   }
 }

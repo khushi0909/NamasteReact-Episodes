@@ -4,7 +4,7 @@ import resDataa from "../../utils/mockData";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
+import React from "react";
 
 function filterData(searchText,resData) {
 
