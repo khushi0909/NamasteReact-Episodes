@@ -8,6 +8,8 @@ import About from "./components/About"
 import Contact from "./components/Contact"
 import Error from "./components/Error"
 import RestaurantMenu from "./components/RestaurantMenu"
+import RestaurantMenu1 from "./components/useRestaurant"
+import RestaurantDetails from "./components/RestaurantDetails"
 
 
 
@@ -45,7 +47,7 @@ const AppLayout = () => {
                     },
                     {
                         path:"/restaurant/:resId",
-                        element:<RestaurantMenu/>,
+                        element:<RestaurantDetails/>,
                     }
                         ],
                         errorElement:<Error/>
