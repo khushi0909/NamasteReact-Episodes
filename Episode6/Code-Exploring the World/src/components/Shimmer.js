@@ -1,7 +1,18 @@
-const shimmer = () =>{
+const Shimmer = () =>{
     return(
-        <h1>Shimmer UI Loading...</h1>
+        <div className="shimmer-container">
+
+{/* (<div className="shimmer-cards"> </div>).map((item)=> {(item)}) */}
+            <div className="shimmer-cards"> </div>
+            <div className="shimmer-cards"> </div>
+            <div className="shimmer-cards"> </div>
+            <div className="shimmer-cards"> </div>
+            <div className="shimmer-cards"> </div>
+
+
+
+        </div>
     )
 }
 
-export default shimmer 
+export default Shimmer 
