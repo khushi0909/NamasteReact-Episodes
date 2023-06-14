@@ -30,14 +30,14 @@ const Header = () => {
 
             <div className="nav-items">
                 <ul>
-                    <li>
+                    <li >
                         
-                        <Link to ="/">Home </Link></li>
-                    <li>
-                        <Link to = "/About">About Us</Link>
+                        <Link className="list" to ="/">Home </Link></li>
+                    <li >
+                        <Link className="list" to = "/About">About Us</Link>
                     </li>
-                    <li>
-                    <Link to = "/Contact">Contact</Link>
+                    <li >
+                    <Link className="list" to = "/Contact">Contact</Link>
                         
                     </li>
                    

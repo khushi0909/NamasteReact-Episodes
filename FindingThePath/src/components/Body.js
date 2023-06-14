@@ -38,12 +38,12 @@ const Body = () => {
     async function getRestaurants(){
       const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING")
       const json = await data.json()
-      console.log(json)
+      // console.log(json)
       setResDataAll(json?.data?.cards[2]?.data?.data?.cards);
       setResDataFiltered(json?.data?.cards[2]?.data?.data?.cards);
 
     }
-    console.log("render");
+    // console.log("render");
 
 
 
@@ -72,7 +72,7 @@ const Body = () => {
                               onChange={(e) => {
                                 setSearchText(e.target.value)
                               }}/>
-                              <button clasksName="search-btn"
+                              <button className="search-btn"
                               // need to filter the data 
                               onClick={() => {
                                 const data = filterData(searchText,resDataAll);
@@ -92,7 +92,7 @@ const Body = () => {
                               <div className="res-container">
                                 {
                                       resDataFiltered.map((restraunt )=> (
-                                        <Link key={restraunt.data.id} to = {"/restaurant/" + restraunt.data.id}>
+                                        <Link className="link" key={restraunt.data.id} to = {"/restaurant/" + restraunt.data.id}>
                                         <Restrauntcard resData={restraunt.data} />
 
                                          </Link>
