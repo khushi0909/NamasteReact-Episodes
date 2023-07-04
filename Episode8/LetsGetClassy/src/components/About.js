@@ -19,16 +19,7 @@ class About extends React.Component {
 
     }
 }
-async componentDidMount(){
-    const data = await fetch("  https://api.github.com/users/akshaymarch7   ")
-    const jdata= await data.json();
-    console.log(jdata)
 
-    this.setState({
-        userInfo:jdata
-    })
-        // console.log("parent did mount")
-    }
 
     render(){
     // console.log("Parent Render")

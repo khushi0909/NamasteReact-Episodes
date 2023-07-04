@@ -7,7 +7,8 @@ class UserClass extends React.Component{
             this.state = {
                     userInfo:{
                         name:"Dummy",
-                        location:"default locat"
+                        location:"default locat",
+                        avatar_url:"dummyphoto"
                     }
             }
         
@@ -46,6 +47,7 @@ class UserClass extends React.Component{
 
                     <h2>{this.state.userInfo.name}</h2>
                     <h3>Location:{this.state.userInfo.location}</h3>
+                    <img src= {this.state.userInfo.avatar_url}/>
                     {/* <h4>Contact:@kitatktiti</h4> */}
              </div>
 
