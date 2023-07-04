@@ -8,6 +8,7 @@ import About from "./components/About"
 import Contact from "./components/Contact"
 import Error from "./components/Error"
 import RestaurantDetails from "./components/RestaurantDetails"
+import Grocery from "./components/Grocery"
 
 
 
@@ -38,6 +39,11 @@ const AppLayout = () => {
                         element:<About/>,
          
                  },
+                 {        
+                    path:"/grocery",
+                    element:<Grocery/>,
+     
+             },
                  {        
                      path:"/contact",
                      element:<Contact/>,
