@@ -8,7 +8,9 @@ import useOnlineStatus from "../../utils/useOnlineStatus";
 //     return false;
 // }
 const Header = () => { 
-
+    let x = 1;
+    let y = x++ + x
+    console.log(y);
         const onlineStatus = useOnlineStatus()
     // const [isLoggedIn,setIsLoggedIn] =useState(true)
 
