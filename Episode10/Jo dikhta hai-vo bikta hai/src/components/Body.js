@@ -55,46 +55,49 @@ const Body = () => {
                   <Shimmer/>
                   
                   ):(
-                          <div className = "body">
-                            <>  <div className="filter">
-                                      <button className="filter-btn" 
-                                      onClick = {()=>{ 
-                                        const   filteredresData = resDataAll.filter(
-                                              (res) => res.data.avgRating>4
-                                              );
-                                              setResDataFiltered(filteredresData);
-                                              console.log("filterdata",filteredresData);
-                                              }}>
-                                                  Top Rated Restraunts</button>
-                              </div>
+                    <div className = "">
+                            <div className="flex border-red-500 border-2 items-center">  
+                                    <div className="">
+                                              <button className="px-4 py-2   bg-gray-200 rounded-lg font-medium shadow-md  " 
+                                              onClick = {()=>{ 
+                                                const   filteredresData = resDataAll.filter(
+                                                      (res) => res.data.avgRating>4
+                                                      );
+                                                      setResDataFiltered(filteredresData);
+                                                      console.log("filterdata",filteredresData);
+                                                      }}>
+                                                          Top Rated Restraunts
+                                              </button>
+                                    </div>
                               
-                              <div className="search-container">
-                                <input
-                                type="text"
-                                className="search-input"
-                                placeholder="search"
-                                value={searchText}
-                              onChange={(e) => {
-                                setSearchText(e.target.value)
-                              }}/>
-                              <button className="search-btn"
-                              // need to filter the data 
-                              onClick={() => {
-                                const data = filterData(searchText,resDataAll);
-                            //update the sate-restaurants
+                                        <div className="m-4 p-6">
+                                                  <input
+                                                  type="text"
+                                                  className="border-2 border-solid border-grey-400"
+                                                  placeholder="Search"
+                                                  value={searchText}
+                                                onChange={(e) => {
+                                                  setSearchText(e.target.value)
+                                                }}/>
+                                                <button className="px-3  ml-2 font-medium text-xl  bg-green-300 rounded-lg  "
+                                                // need to filter the data 
+                                                onClick={() => {
+                                                  const data = filterData(searchText,resDataAll);
+                                              //update the sate-restaurants
 
-                                setResDataFiltered(data)
-                              }}>Search
+                                                  setResDataFiltered(data)
+                                                }}>Search
 
-                              </button>
+                                                </button>
 
 
-                              </div>
-                              
-                              </>
+                                        </div>
+                                        
+                              <div/>
+                          </div>
                             
                             {/* write logic for no rest found */}
-                              <div className="res-container">
+                              <div className="flex  flex-wrap  ">
                                 {
                                       resDataFiltered.map((restraunt )=> (
                                         <Link className="link" key={restraunt.data.id} to = {"/restaurant/" + restraunt.data.id}>
@@ -108,7 +111,7 @@ const Body = () => {
 
                               </div>
                               
-                          </div>
+                       </div>
                       )
 
 }
