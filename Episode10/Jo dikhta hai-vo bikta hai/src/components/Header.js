@@ -24,7 +24,7 @@ const Header = () => {
     return(
       
 
-        <header className ="flex justify-between items-center shadow-lg border-2  border-red-400 text-lg">
+        <header className ="flex justify-between items-center shadow-lg border-2  border-red-400 ">
             
             <div className="w-56">
                 <img src= {LOGO_URL}/>

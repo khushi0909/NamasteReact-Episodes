@@ -56,8 +56,8 @@ const Body = () => {
                   
                   ):(
                           <div className = "body">
-                            <>  <div className="filter">
-                                      <button className="filter-btn" 
+                            <>  <div className="p-3 flex justify-center">
+                                      <button className="p-3 mt-6 font-semibold rounded-xl bg-yellow-200 cursor-pointer" 
                                       onClick = {()=>{ 
                                         const   filteredresData = resDataAll.filter(
                                               (res) => res.data.avgRating>4
@@ -68,16 +68,16 @@ const Body = () => {
                                                   Top Rated Restraunts</button>
                               </div>
                               
-                              <div className="search-container">
+                              <div className = "flex justify-center p-1 gap-2">
                                 <input
                                 type="text"
-                                className="search-input"
+                                className="px-1 py-3"
                                 placeholder="search"
                                 value={searchText}
                               onChange={(e) => {
                                 setSearchText(e.target.value)
                               }}/>
-                              <button className="search-btn"
+                              <button className="px-3 text-lg font-semibold"
                               // need to filter the data 
                               onClick={() => {
                                 const data = filterData(searchText,resDataAll);
@@ -94,10 +94,10 @@ const Body = () => {
                               </>
                             
                             {/* write logic for no rest found */}
-                              <div className="res-container">
+                              <div className="flex my-1 mx-auto p-3 gap-2">
                                 {
                                       resDataFiltered.map((restraunt )=> (
-                                        <Link className="link" key={restraunt.data.id} to = {"/restaurant/" + restraunt.data.id}>
+                                        <Link className="no-underline text-black" key={restraunt.data.id} to = {"/restaurant/" + restraunt.data.id}>
                                         <Restrauntcard resData={restraunt.data} />
 
                                          </Link>

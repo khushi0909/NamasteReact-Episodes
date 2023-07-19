@@ -24,35 +24,35 @@ const Header = () => {
     return(
       
 
-        <header className ="header">
+        <header className =" border-red-400 flex justify-between items-center shadow-md border-8">
             
-            <div className="logo">
-                <img src= {LOGO_URL}/>
+            <div className=" w-56">
+                <img className=" w-56" src= {LOGO_URL}/>
             </div>
 
-            <div className="nav-items">
-                <ul>
-                    <li>
+            <div className="flex justify-center items-center border-2 border-green-400 mx-3">
+                <ul className="flex px-1">
+                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                         Online Status: {onlineStatus ? "✅" :" 🔴" }
                     </li>
-                    <li >
+                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                         
                         <Link className="list" to ="/">Home </Link>
                     </li>
-                    <li >
+                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                         <Link className="list" to = "/About">About Us</Link>
                     </li>
-                    <li >
+                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                     <Link className="list" to = "/Contact">Contact</Link>
                         
                     </li>
-                    <li >
+                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                     <Link className="list" to = "/grocery">Grocery</Link>
                         
                     </li>
                    
                 </ul>
-                <button className="login" onClick={()=>{
+                <button className="p-1 text-lg font-medium mx-2" onClick={()=>{
                         btnNameReact === "Login"
                     ?setBtnNameReact("Logout")
                     :setBtnNameReact("Login")
