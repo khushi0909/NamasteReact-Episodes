@@ -1,5 +1,5 @@
 
-import Restrauntcard from "./Restrauntcard";
+import Restrauntcard ,{withPromotedLabel} from "./Restrauntcard";
 import resDataa from "../../utils/mockData";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
@@ -28,6 +28,8 @@ const Body = () => {
     const [resDataFiltered , setResDataFiltered] = useState([])
     const [searchText,setSearchText] =useState([])
 
+
+        const RestrauntCardPromoted = withPromotedLabel(Restrauntcard);
     //empty dependency array =>once after Every render 
     // dep array [searchTeaxt] => once after initial render + everytime after my searchText Changes 
 
@@ -38,35 +40,44 @@ const Body = () => {
 
     async function getRestaurants(){
       try {
-        const response = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=12.9715987&lng=77.5945627");
+        // const response = await fetch("https://www.swiggy.com/dapi/homepage/getCards?lat=12.9715987&lng=77.5945627");
+        const response = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING");
+        
+        // const response = await fetch("https://www.swiggy.com/dapi/homepage/getCards?lat=19.0759837&lng=72.8776559");
+
+
         // if response is not ok then throw new Error
         if (!response.ok) {
           const err = response.status;
           throw new Error(err);
         } else {
           const json = await response.json();
- console.log(json.data.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants )
+//  console.log(json.data.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants )
+//  console.log(json.data.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants )
+ 
  console.log(json)
-
        // initialize checkJsonData() function to check Swiggy Restaurant data
        async function checkJsonData(jsonData) {
-        for (let i = 0; i < jsonData?.data?.success?.cards.length; i++) {
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
        // initialize checkData for Swiggy Restaurant data
-          let checkData = json?.data?.success?.cards[i]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+          let checkData = jsonData?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
       // if checkData is not undefined then return it
           if (checkData !== undefined) {
-                      return checkData;
+                      return (
+          console.log(checkData),
+                        
+                        checkData)
                                         }                               }
                                                 }
       // call the checkJsonData() function which return Swiggy Restaurant data
         const resData = await checkJsonData(json);
-
       // update the state variable restaurants with Swiggy API data
         setResDataAll(resData);
         setResDataFiltered(resData);
 } 
-      }catch (error) {
+      }
+      catch (error) {
         console.error(error); // show error in console
       }
       // console.log(json.data.success?.cards)
@@ -76,17 +87,16 @@ const Body = () => {
       // setResDataFiltered(json.data.success.cards[4].gridWidget.gridElements.infoWithStyle.restaurants);
         
     
-    // console.log("render");
+    console.log("render",resDataAll);
 
     const  onlineStatus = useOnlineStatus();
     if(onlineStatus === false) return (<h1>Looks like you are offline !!</h1>);
 
 
 
-                  return resDataAll.length === 0 ? (
-                  <Shimmer/>
-                  
-                  ):(
+              if (!resDataAll) return (<Shimmer/>);
+              
+              return(
                           <div className = "body">
                             <>  <div className="p-3 flex justify-center">
                                       <button className="p-3 mt-6 font-semibold rounded-xl bg-yellow-200 cursor-pointer" 
@@ -126,11 +136,15 @@ const Body = () => {
                               </>
                             
                             {/* write logic for no rest found */}
-                              <div className="flex my-1 mx-auto p-3 gap-2">
+                              <div className="flex flex-wrap  my-1 m-auto  place-content-center  gap-4 border-2 w-5/6  border-yellow-500">
                                 {
                                       resDataFiltered.map((restraunt )=> (
                                         <Link className="no-underline text-black" key={restraunt.info.id} to = {"/restaurant/" + restraunt.info.id}>
+
+                                          {/* if the restraunt is promoted then add a promoted label to it  */}
+                                       {  (restraunt?.info?.promoted) ? <RestrauntCardPromoted resData={restraunt.info}/> :
                                         <Restrauntcard resData={restraunt.info} />
+                                      }
 
                                          </Link>
                                         )       )

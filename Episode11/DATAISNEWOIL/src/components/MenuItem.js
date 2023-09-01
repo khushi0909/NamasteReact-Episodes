@@ -5,20 +5,20 @@ function MenuItem({item}) {
 
     console.log({item})
   return (
-    <div className='menuContainer'>
-                <div className='menuDetails'>
-                    <div className='nameprice'>
+    <div className='flex justify-between items-center p-3 w-3/4 border-b-2 border-2 gap-2  border-red-500  m-auto border-[rgb(175, 160, 160)]'>
+                <div className='gap-4 flex flex-col border-2 w-2/3 border-blue-400'>
+                    <div className='font-bold text-lg text-[#fafafa]'> 
                             <div>{item.name}</div>
-                            <div>Rs.{item.price/100}</div>
+                            <div className='font-medium'>Rs.{item.price/100}</div>
                     </div>
-                    <div className="description">
+                    <div className="text-gray-600 border-2 border-green-400 text-left ">
                             <div>{item.description}</div>
                     </div>
                     
                 </div>    
         
-                <div className="dishImg">
-                 { (!MENU_IMG+item.imageId)?<img src={MENU_IMG + item.imageId} />:<img src={MENU_IMG + item.imageId} style={{display:'none'}} />}
+                <div className="w-40 h-40 border-2 border-blue-300 rounded-2xl ">
+                 { (!MENU_IMG+item.imageId)?<img src={MENU_IMG + item.imageId} className='rounded-2xl w-full h-full border-red-300 border-2' />:<img src={MENU_IMG + item.imageId} style={{display:'none'}} />}
                 </div>
     </div>
   )

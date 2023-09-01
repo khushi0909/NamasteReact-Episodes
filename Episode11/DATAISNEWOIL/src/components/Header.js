@@ -26,8 +26,8 @@ const Header = () => {
 
         <header className =" border-red-400 flex justify-between items-center shadow-md border-8">
             
-            <div className=" w-56">
-                <img className=" w-56" src= {LOGO_URL}/>
+            <div className=" w-40 border-2 border-black">
+                <img className=" w-40 border-2 border-yellow-500" src= {LOGO_URL}/>
             </div>
 
             <div className="flex justify-center items-center border-2 border-green-400 mx-3">

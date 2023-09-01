@@ -15,6 +15,7 @@ const useRestaurant = () =>
 
     useEffect(()=>{
             fetchMenu()
+            console.log("fetching menu called useeffect")
     },[])
 
 
@@ -24,12 +25,12 @@ const fetchMenu = async () => {
     const data = await fetch(MENU_API + resId);
 
     const resData = await data.json();
-// console.log(resData) 
+console.log("menuapi",resData) 
     
     const itemCategory = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
     const nestedItemCategory = "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
-    const menuItemList= resData?.data.cards[3].groupedCard.cardGroupMap?.REGULAR?.cards;
-    // console.log(menuItemList)
+    const menuItemList= resData?.data.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards;
+    console.log("menuitemlist",menuItemList)
 
 
     const menu =  menuItemList.map((item)=>{
