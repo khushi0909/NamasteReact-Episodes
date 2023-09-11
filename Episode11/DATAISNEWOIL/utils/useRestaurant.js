@@ -29,24 +29,28 @@ console.log("menuapi",resData)
     
     const itemCategory = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
     const nestedItemCategory = "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory";
-    const menuItemList= resData?.data.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards;
-    console.log("menuitemlist",menuItemList)
+    // const menuItemList= resData?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+    const menuItemData = resData?.data?.cards?.find((x)=>x.groupedCard?.cardGroupMap?.REGULAR?.cards);
+    console.log("menuItemData",menuItemData)
+    const menuItemList1 = menuItemData?.groupedCard?.cardGroupMap?.REGULAR?.cards
+    console.log("menuItemLit1",menuItemList1)
+    // console.log("menuitemlist",menuItemList);
 
-
-    const menu =  menuItemList.map((item)=>{
+    const menu =  menuItemList1.map((item)=>{
         if((item.card.card["@type"]=== nestedItemCategory) || (item.card.card["@type"] === itemCategory)){
             return item.card.card;
         }
     })
-
+console.log("menu",menu)
 
     const modifiedData = {
         info: resData.data.cards[0].card.card.info,
         menu: menu.filter((value)=>(value!==undefined)).map((item)=>(item))
     }
+console.log("menumodified",modifiedData.menu)
         
             setResInfo(modifiedData)
-}catch(error){
+}catch(error){  
     console.log(error);
 }
 }
