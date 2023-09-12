@@ -2,9 +2,12 @@ import React from "react"
 import Shimmer from "./Shimmer";
 import RestaurantItemCategory from "./RestaurantItemCategory"
 import RestaurantNestedItemCategory from "./RestaurantNestedItemCategory"
+import { useState } from "react";
 
 const RestaurantMenuList = ({menu}) => {
     console.log({menu});
+
+    const [showIndex,setShowIndex] = useState(null)
     
     return!menu ? <Shimmer/>:(
     
@@ -13,9 +16,14 @@ const RestaurantMenuList = ({menu}) => {
      <div key={index}>
         { item.categories
           ?(
-        <RestaurantNestedItemCategory nestedCategory={item} />
+        <RestaurantNestedItemCategory  key={index} nestedCategory={item} />
                         ) : (
-         <RestaurantItemCategory itemCategory={item} />
+            //controlled component 
+
+         <RestaurantItemCategory key={index} 
+                                itemCategory={item}
+                               isActive={ index === showIndex ? true :false} 
+                               setShowIndex = {() => setShowIndex(index)}/>
            )
        }
 

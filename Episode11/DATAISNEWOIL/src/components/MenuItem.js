@@ -3,7 +3,7 @@ import { MENU_IMG } from '../../utils/constant'
 
 function MenuItem({item}) {
 
-    console.log({item})
+    // console.log("menu item",{item})
   return (
     <div className='flex justify-between items-center p-3 w-3/4 border-b-2 border-2 gap-2  border-red-500  m-auto border-[rgb(175, 160, 160)]'>
                 <div className='gap-4 flex flex-col border-2 w-2/3 border-blue-400'>
