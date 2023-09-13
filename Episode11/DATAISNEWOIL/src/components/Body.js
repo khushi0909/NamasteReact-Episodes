@@ -1,11 +1,12 @@
 
 import Restrauntcard ,{withPromotedLabel} from "./Restrauntcard";
 import resDataa from "../../utils/mockData";
-import {useState,useEffect} from "react";
+import {useState,useEffect,useContext} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import React from "react";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 
 function filterData(searchText,resData) {
 
@@ -55,7 +56,7 @@ const Body = () => {
 //  console.log(json.data.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants )
 //  console.log(json.data.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants )
  
- console.log(json)
+ console.log("fetched json",json)
        // initialize checkJsonData() function to check Swiggy Restaurant data
        async function checkJsonData(jsonData) {
         for (let i = 0; i < jsonData?.data?.cards.length; i++) {
@@ -92,6 +93,8 @@ const Body = () => {
     const  onlineStatus = useOnlineStatus();
     if(onlineStatus === false) return (<h1>Looks like you are offline !!</h1>);
 
+    const {setUserName,loggedInUser} = useContext(UserContext)
+
 
 
               if (!resDataAll) return (<Shimmer/>);
@@ -108,6 +111,11 @@ const Body = () => {
                                               console.log("filterdata",filteredresData);
                                               }}>
                                                   Top Rated Restraunts</button>
+                              </div>
+
+                              <div className="p-3 flex justify-center">
+                                <label>UserName</label>
+                                   <input className="border-2 border-black ml-2 p-1" value= {loggedInUser} onChange={(e) => setUserName(e.target.value)}/>
                               </div>
                               
                               <div className = "flex justify-center p-1 gap-2">

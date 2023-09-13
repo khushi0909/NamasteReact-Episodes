@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../../utils/constant";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useContext } from "react";
 import React from "react";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 // const loggedInUser = () => {
 //     //API call to check authentications
 //     return false;
@@ -10,6 +11,11 @@ import useOnlineStatus from "../../utils/useOnlineStatus";
 const Header = () => { 
 
         const onlineStatus = useOnlineStatus()
+
+        const {loggedInUser} = useContext(UserContext);
+        console.log({loggedInUser})
+
+
     // const [isLoggedIn,setIsLoggedIn] =useState(true)
 
     // if no dependency array ===useEffect is called on Every render 
@@ -57,6 +63,9 @@ const Header = () => {
                     ?setBtnNameReact("Logout")
                     :setBtnNameReact("Login")
                     }}>{btnNameReact}</button>
+
+
+                    <div className="px-4 ">{loggedInUser}</div>
                 {/* {(isLoggedIn)?
                 <button onClick={()=> setIsLoggedIn(false)}>Logout</button>
                 :
