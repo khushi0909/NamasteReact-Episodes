@@ -1,7 +1,19 @@
 import React from 'react'
 import { MENU_IMG } from '../../utils/constant'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../utils/cartSlice';
 
 function MenuItem({item}) {
+
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) =>{
+
+    //dispatch an action
+    dispatch(addItem(item))
+
+  }
 
     // console.log("menu item",{item})
   return (
@@ -18,6 +30,9 @@ function MenuItem({item}) {
                 </div>    
         
                 <div className="w-40 h-40 border-2 border-blue-300 rounded-2xl ">
+                  <div className='absolute'>
+                    <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg"  onClick={()=>handleAddItem(item)}   >Add +</button>
+                  </div>
                  { (!MENU_IMG+item.imageId)?<img src={MENU_IMG + item.imageId} className='rounded-2xl w-full h-full border-red-300 border-2' />:<img src={MENU_IMG + item.imageId} style={{display:'none'}} />}
                 </div>
     </div>

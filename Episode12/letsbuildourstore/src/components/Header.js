@@ -4,6 +4,11 @@ import { useState,useEffect,useContext } from "react";
 import React from "react";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import UserContext from "../../utils/UserContext";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+
+
+
+
 // const loggedInUser = () => {
 //     //API call to check authentications
 //     return false;
@@ -27,6 +32,16 @@ const Header = () => {
     useEffect(()=>{
             console.log("useEffect called")
     })
+
+
+//Selector -it is a hook-this hook give us access to the store 
+//we aew subscribing to the store using selector 
+
+
+
+const cartItems = useSelector((store)=>store.cart.items);
+console.log(cartItems)
+
     return(
       
 
@@ -57,7 +72,7 @@ const Header = () => {
                         
                     </li>
                     <li className="text-lg font-bold text-gray-600 m-2 p-2">
-                    Cart(0 items)
+                        <Link className="" to = "/Cart">Cart({cartItems.length})</Link>
                     </li>
                    
                 </ul>

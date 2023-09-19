@@ -9,7 +9,7 @@ function RestaurantItemCategory({itemCategory,isActive,setShowIndex}) {
     const handleClick = () => {
           setShowIndex();
     };
-    // console.log("itemCategory",{itemCategory} )
+    console.log("itemCategory",{itemCategory} )
   return (
     <section className="">
         <div className=" bg-green-50 flex m-auto w-9/12 py-3 px-4 mt-2 justify-between items-center text-xl font-bold text-[rgb(34,30,30)]" onClick={handleClick}>

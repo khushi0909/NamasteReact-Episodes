@@ -12,6 +12,7 @@ import RestaurantDetails from "./components/RestaurantDetails"
 import UserContext from "../utils/UserContext"
 import {Provider} from "react-redux"
 import appStore from "../utils/appStore"
+import Cart from "./components/Cart"
 // import Grocery from "./components/Grocery"
 
 
@@ -73,6 +74,10 @@ const AppLayout = () => {
                     {
                         path:"/restaurant/:resId",
                         element:<RestaurantDetails/>,
+                    },
+                    {
+                        path:"/cart",
+                        element:<Cart/>
                     }
                         ],
                         errorElement:<Error/>

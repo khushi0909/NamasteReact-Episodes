@@ -33,7 +33,7 @@ console.log({itemCards})
 return  (
         <div className="menu">
             <h1>
-                {name}
+                {name}www
             </h1>
             <h3>{cuisines.join(" , ")}</h3>
            
