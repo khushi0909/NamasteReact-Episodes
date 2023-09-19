@@ -10,6 +10,8 @@ import Contact from "./components/Contact"
 import Error from "./components/Error"
 import RestaurantDetails from "./components/RestaurantDetails"
 import UserContext from "../utils/UserContext"
+import {Provider} from "react-redux"
+import appStore from "../utils/appStore"
 // import Grocery from "./components/Grocery"
 
 
@@ -31,13 +33,14 @@ const AppLayout = () => {
 //so to pass this new information in our app we will use the context provider 
     },[])
     return (
-        <UserContext.Provider value={{loggedInUser:userName ,setUserName}}>
-                 <main className="app">
-                    <Header/>
-                    <Outlet/>
-                 </main>
-        </UserContext.Provider>
-       
+        <Provider store={appStore}>
+                     <UserContext.Provider value={{loggedInUser:userName ,setUserName}}>
+                                <main className="app">
+                                    <Header/>
+                                    <Outlet/>
+                                </main>
+                      </UserContext.Provider>
+        </Provider>
     );
 
     };

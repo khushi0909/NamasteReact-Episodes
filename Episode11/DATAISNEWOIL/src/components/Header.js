@@ -56,6 +56,9 @@ const Header = () => {
                     <Link className="list" to = "/grocery">Grocery</Link>
                         
                     </li>
+                    <li className="text-lg font-bold text-gray-600 m-2 p-2">
+                    Cart(0 items)
+                    </li>
                    
                 </ul>
                 <button className="p-1 text-lg font-medium mx-2" onClick={()=>{
@@ -72,6 +75,7 @@ const Header = () => {
                 <button onClick={()=> setIsLoggedIn(true)}>Login</button>
 
                 } */}
+            {/* //selector */}
             
             </div>
 
