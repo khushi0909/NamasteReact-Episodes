@@ -10,8 +10,9 @@ import UserContext from "../../utils/UserContext";
 
 function filterData(searchText,resData) {
 
-  const filterData = resData.filter((res) => res?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-
+  const filterData = resData.filter((res) => res?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+  console.log("filter",filterData)
+  console.log("search text",searchText)
   if(filterData){
   return filterData;
 
@@ -89,6 +90,9 @@ const Body = () => {
         
     
     console.log("render",resDataAll);
+    console.log("sss", searchText);
+    console.log("filtereddata",resDataFiltered)
+
 
     const  onlineStatus = useOnlineStatus();
     if(onlineStatus === false) return (<h1>Looks like you are offline !!</h1>);
@@ -105,7 +109,7 @@ const Body = () => {
                                       <button className="p-3 mt-6 font-semibold rounded-xl bg-yellow-200 cursor-pointer" 
                                       onClick = {()=>{ 
                                         const   filteredresData = resDataAll.filter(
-                                              (res) => res.data.avgRating>4
+                                              (res) => res.info.avgRating>4
                                               );
                                               setResDataFiltered(filteredresData);
                                               console.log("filterdata",filteredresData);
@@ -132,7 +136,6 @@ const Body = () => {
                               onClick={() => {
                                 const data = filterData(searchText,resDataAll);
                             //update the sate-restaurants
-
                                 setResDataFiltered(data)
                               }}>Search
 

@@ -81,3 +81,26 @@ Footer
 
     //const resData = arr[0];
     // const setResData = arr[1];
+
+# Types of Testing (Developer)
+-Unit Testing 
+-Integration Testing 
+-End to End Testing (etoe testing)
+
+# Setting up testing in your app
+-install react testing library 
+-Installed Jest
+-Installed babel dependencies 
+-Configure Babel
+-Configure Parcel Config file to disable bable transpilation
+-Jest Configuration(npx jest --init)
+-install jsdom library-npm install --save-dev jest-environment-jsdom            [react testing library
+ -@babel/preset-react -install it 
+-@babel/preset-react include this is babel.config.js
+-Install @testing-library/jest-dom
+
+
+
+
+#  __ is called as Dunder (search dunder test /dunder method)]-we use when creating test folder as __tests__
+
