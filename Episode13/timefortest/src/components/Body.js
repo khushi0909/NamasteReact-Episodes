@@ -125,6 +125,7 @@ const Body = () => {
                               <div className = "flex justify-center p-1 gap-2">
                                 <input
                                 type="text"
+                                data-testid="searchInput"
                                 className="px-1 py-3"
                                 placeholder="search"
                                 value={searchText}
