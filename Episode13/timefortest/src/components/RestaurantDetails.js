@@ -13,7 +13,7 @@ const RestaurantDetails = () => {
     const {resInfo} = useRestaurant();
 
 
-    console.log({resInfo})
+    // console.log({resInfo})
     
 
     return !resInfo?(

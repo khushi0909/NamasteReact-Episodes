@@ -18,7 +18,7 @@ const Header = () => {
         const onlineStatus = useOnlineStatus()
 
         const {loggedInUser} = useContext(UserContext);
-        console.log({loggedInUser})
+        // console.log({loggedInUser})
 
 
     // const [isLoggedIn,setIsLoggedIn] =useState(true)
@@ -29,9 +29,9 @@ const Header = () => {
 
 
     const [btnNameReact ,setBtnNameReact] = useState("Login");
-    useEffect(()=>{
-            console.log("useEffect called")
-    })
+    // useEffect(()=>{
+    //         console.log("useEffect called")
+    // })
 
 
 //Selector -it is a hook-this hook give us access to the store 
@@ -40,22 +40,22 @@ const Header = () => {
 
 
 const cartItems = useSelector((store)=>store.cart.items);
-console.log(cartItems)
+// console.log(cartItems)
 
     return(
       
 
-        <header className =" border-red-400 flex justify-between items-center shadow-md border-8">
+        <header className =" flex justify-between items-center shadow-md ">
             
-            <div className=" w-40 border-2 border-black">
-                <img className=" w-40 border-2 border-yellow-500" src= {LOGO_URL}/>
+            <div className="w-40 border-2 border-black">
+                <img className="w-40 border-2 border-yellow-500" src= {LOGO_URL}/>
             </div>
 
             <div className="flex justify-center items-center border-2 border-green-400 mx-3">
                 <ul className="flex px-1">
-                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
+                    {/* <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                         Online Status: {onlineStatus ? "✅" :" 🔴" }
-                    </li>
+                    </li> */}
                     <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                         
                         <Link className="list" to ="/">Home </Link>
@@ -83,7 +83,7 @@ console.log(cartItems)
                     }}>{btnNameReact}</button>
 
 
-                    <div className="px-4 ">{loggedInUser}</div>
+                    {/* <div className="px-4 ">{loggedInUser}</div> */}
                 {/* {(isLoggedIn)?
                 <button onClick={()=> setIsLoggedIn(false)}>Logout</button>
                 :

@@ -5,7 +5,7 @@ import RestaurantNestedItemCategory from "./RestaurantNestedItemCategory"
 import { useState } from "react";
 
 const RestaurantMenuList = ({menu}) => {
-    console.log({menu});
+    // console.log({menu});
 
     const [showIndex,setShowIndex] = useState(null)
     

@@ -22,14 +22,14 @@ const fetchMenu = async () => {
     const data = await fetch(MENU_API +resId)
 
     const json = await data.json();
-    console.log("from menu api wit resid",json)
+    // console.log("from menu api wit resid",json)
     setResInfo(json.data)
 }
 if (resInfo === null )return <Shimmer/>;
 const {name,cuisines,costForTwoMessage,city} = resInfo?.cards[0]?.card?.card?.info;
 
 const {itemCards} =  resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card.card;
-console.log({itemCards})
+// console.log({itemCards})
 return  (
         <div className="menu">
             <h1>

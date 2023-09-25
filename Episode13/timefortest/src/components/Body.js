@@ -57,7 +57,7 @@ const Body = () => {
 //  console.log(json.data.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants )
 //  console.log(json.data.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants )
  
- console.log("fetched json",json)
+//  console.log("fetched json",json)
        // initialize checkJsonData() function to check Swiggy Restaurant data
        async function checkJsonData(jsonData) {
         for (let i = 0; i < jsonData?.data?.cards.length; i++) {
@@ -67,7 +67,7 @@ const Body = () => {
       // if checkData is not undefined then return it
           if (checkData !== undefined) {
                       return (
-          console.log(checkData),
+          // console.log(checkData),
                         
                         checkData)
                                         }                               }
@@ -89,13 +89,13 @@ const Body = () => {
       // setResDataFiltered(json.data.success.cards[4].gridWidget.gridElements.infoWithStyle.restaurants);
         
     
-    console.log("render",resDataAll);
-    console.log("sss", searchText);
-    console.log("filtereddata",resDataFiltered)
+    // console.log("render",resDataAll);
+    // console.log("sss", searchText);
+    // console.log("filtereddata",resDataFiltered)
 
 
-    const  onlineStatus = useOnlineStatus();
-    if(onlineStatus === false) return (<h1>Looks like you are offline !!</h1>);
+    // const  onlineStatus = useOnlineStatus();
+    // if(onlineStatus === false) return (<h1>Looks like you are offline !!</h1>);
 
     const {setUserName,loggedInUser} = useContext(UserContext)
 
@@ -112,27 +112,27 @@ const Body = () => {
                                               (res) => res.info.avgRating>4
                                               );
                                               setResDataFiltered(filteredresData);
-                                              console.log("filterdata",filteredresData);
+                                              // console.log("filterdata",filteredresData);
                                               }}>
-                                                  Top Rated Restraunts</button>
+                                                  Restaurant (4.0 + Ratings)</button>
                               </div>
 
-                              <div className="p-3 flex justify-center">
+                              {/* <div className="p-3 flex justify-center">
                                 <label>UserName</label>
                                    <input className="border-2 border-black ml-2 p-1" value= {loggedInUser} onChange={(e) => setUserName(e.target.value)}/>
-                              </div>
+                              </div> */}
                               
-                              <div className = "flex justify-center p-1 gap-2">
+                              <div className = "flex justify-center p-1 gap-2 ">
                                 <input
                                 type="text"
                                 data-testid="searchInput"
-                                className="px-1 py-3"
-                                placeholder="search"
+                                className="px-2 py-3 border-2 border-yellow-400 w-1/3 rounded-lg"
+                                placeholder="Search for the Restaurant you want...."
                                 value={searchText}
                               onChange={(e) => {
                                 setSearchText(e.target.value)
                               }}/>
-                              <button className="px-3 text-lg font-semibold"
+                              <button className="px-3 text-lg font-semibold bg-yellow-400 rounded-lg w-40" 
                               // need to filter the data 
                               onClick={() => {
                                 const data = filterData(searchText,resDataAll);
