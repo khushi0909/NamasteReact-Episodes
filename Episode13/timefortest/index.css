@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .tw-hover:hover{
+
+transform: scale(1.2);
+} */

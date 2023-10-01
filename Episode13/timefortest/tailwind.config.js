@@ -1,9 +1,27 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
-  content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
+  mode: 'jit',
+  relative: true,
+  content: {
+  files: [
+    // Example content paths...
+    './public/**/*.html',
+    './src/**/*.{html,js,jsx,ts,tsx,vue}',
+  ],
+},
   theme: {
-    extend: {},
+    screens: {
+    'sm1': '500px',
+    ...defaultTheme.screens,
   },
-  plugins: [],
+  extend: {
+   
+    boxShadow: {
+      '3xl': '-1px 5px 10px 5px rgba(112, 112, 112, 0.2) '
+    }
+  },
+}
 }
 

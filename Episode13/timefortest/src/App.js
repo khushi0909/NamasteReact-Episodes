@@ -1,6 +1,6 @@
 
 import React, { useState,useEffect } from "react"
-import { lazy,Suspense } from "react"
+// import { lazy,Suspense } from "react"
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
 import Body from "./components/Body"
@@ -13,10 +13,11 @@ import UserContext from "../utils/UserContext"
 import {Provider} from "react-redux"
 import appStore from "../utils/appStore"
 import Cart from "./components/Cart"
+import Footer from "./components/Footer"
 // import Grocery from "./components/Grocery"
 
 
-const Grocery = lazy(()=> import ("./components/Grocery"))
+// const Grocery = lazy(()=> import ("./components/Grocery"))
         
 const AppLayout = () => {
 
@@ -36,9 +37,10 @@ const AppLayout = () => {
     return (
         <Provider store={appStore}>
                      <UserContext.Provider value={{loggedInUser:userName ,setUserName}}>
-                                <main className="app">
+                                <main className="flex flex-col  min-h-screen">
                                     <Header/>
                                     <Outlet/>
+                                    <Footer />
                                 </main>
                       </UserContext.Provider>
         </Provider>
@@ -61,11 +63,11 @@ const AppLayout = () => {
                         element:<About/>,
          
                  },
-                 {        
-                    path:"/grocery",
-                    element:<Suspense fallback={<h1>Loading....</h1>}><Grocery/> </Suspense>,
+            //      {        
+            //         path:"/grocery",
+            //         element:<Suspense fallback={<h1>Loading....</h1>}><Grocery/> </Suspense>,
      
-             },
+            //  },
                  {        
                      path:"/contact",
                      element:<Contact/>,

@@ -45,42 +45,42 @@ const cartItems = useSelector((store)=>store.cart.items);
     return(
       
 
-        <header className =" flex justify-between items-center shadow-md ">
+        <header className =" flex  justify-between items-center shadow-lg  ">
             
-            <div className="w-40 border-2 border-black">
+            <div className="w-40  ">
                 <img className="w-40 border-2 border-yellow-500" src= {LOGO_URL}/>
             </div>
 
-            <div className="flex justify-center items-center border-2 border-green-400 mx-3">
+            <div className="flex justify-center items-center  max-[375px]:border-red-500  max-[375px]:border-8  sm:mx-3 ">
                 <ul className="flex px-1">
                     {/* <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                         Online Status: {onlineStatus ? "✅" :" 🔴" }
                     </li> */}
-                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
+                    <li className="text-lg font-semibold text-gray-600 m-2 p-2 hover:bg-yellow-600 hover:text-white rounded-md sm:px-4">
                         
                         <Link className="list" to ="/">Home </Link>
                     </li>
-                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
+                    {/* <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                         <Link className="list" to = "/About">About Us</Link>
-                    </li>
-                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
+                    </li> */}
+                    <li className="text-lg font-semibold text-gray-600 m-2 p-2  hover:bg-yellow-600 hover:text-white rounded-md sm:px-4">
                     <Link className="list" to = "/Contact">Contact</Link>
                         
                     </li>
-                    <li className="text-lg font-semibold text-gray-600 m-2 p-2">
+                    {/* <li className="text-lg font-semibold text-gray-600 m-2 p-2">
                     <Link className="list" to = "/grocery">Grocery</Link>
                         
-                    </li>
-                    <li className="text-lg font-bold text-gray-600 m-2 p-2">
+                    </li> */}
+                    <li className="text-lg font-bold text-gray-600 m-2 p-2  hover:bg-yellow-600 hover:text-white rounded-md px-4">
                         <Link className="" to = "/Cart">Cart({cartItems.length})</Link>
                     </li>
                    
                 </ul>
-                <button className="p-1 text-lg font-medium mx-2" onClick={()=>{
+                {/* <button className="p-1 text-lg font-medium mx-2 hover:bg-yellow-600 hover:text-white rounded-md px-4 " onClick={()=>{
                         btnNameReact === "Login"
                     ?setBtnNameReact("Logout")
                     :setBtnNameReact("Login")
-                    }}>{btnNameReact}</button>
+                    }}>{btnNameReact}</button> */}
 
 
                     {/* <div className="px-4 ">{loggedInUser}</div> */}

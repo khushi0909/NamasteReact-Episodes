@@ -1,6 +1,8 @@
 import React from "react";
 import { CDN_URL } from "../../utils/constant";
 import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons'
 
 
 const Restrauntcard = (props) => {  // or {resName , cuisine}
@@ -11,22 +13,23 @@ const {cloudinaryImageId,name,avgRating,cuisines,costForTwoString} = resData;
 
 let cu = cuisines.slice(0,3)
 console.log(cuisines,cu)
+let Name = name.slice(0,23)
 
 
 return(
-<div className="border-2 border-green-600 flex flex-col flex-auto grow w-56  rounded-lg p-2 bg-gray-200" >
+<div className="  shadow-3xl flex flex-col flex-auto grow w-60 rounded-xl p-2 bg-gray-100  h-80 max-h-96 mb-8 transform transition duration-500 hover:scale-110  " >
         <img className="w-full h-52  rounded-lg" src={CDN_URL+cloudinaryImageId}/>
       
-        <div className="res-details">
-                <h3 className="font-bold">{name}</h3>               
+        <div className="flex flex-wrap flex-col">
+                <h3 className="font-bold text-base">{Name}...</h3>               
                 <h4 className="flex flex-wrap">
-                        <span className="flex flex-wrap ">{cu.join(',')}</span>
-                <span className="flex flex-wrap">...</span>
+                        <span className="flex flex-wrap ">{cu.join(',')}...</span>
+                {/* <span className="flex flex-wrap"></span> */}
                 
                 </h4>
 
-                <div className="clubinfo">
-                        <h4 className ="rating"><span className="fa fa-star check"></span>{avgRating}</h4> 
+                <div className="c">
+                        <h4 className =" font-medium"><FontAwesomeIcon icon={faStar} className='text-green-600 pr-1' />{avgRating}</h4>
                         <h4 className="cost">{costForTwoString}</h4>
                 </div>
 

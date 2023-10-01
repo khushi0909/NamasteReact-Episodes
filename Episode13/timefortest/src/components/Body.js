@@ -126,13 +126,13 @@ const Body = () => {
                                 <input
                                 type="text"
                                 data-testid="searchInput"
-                                className="px-2 py-3 border-2 border-yellow-400 w-1/3 rounded-lg"
-                                placeholder="Search for the Restaurant you want...."
+                                className=" w-2/3 px-2 py-3 border-2 border-yellow-400 sm:w-1/3 rounded-lg"
+                                placeholder="Search for the Restaurant ...."
                                 value={searchText}
                               onChange={(e) => {
                                 setSearchText(e.target.value)
                               }}/>
-                              <button className="px-3 text-lg font-semibold bg-yellow-400 rounded-lg w-40" 
+                              <button className="px-1  w-20 sm:px-3 sm:text-lg font-semibold bg-yellow-400 rounded-lg sm:w-40 " 
                               // need to filter the data 
                               onClick={() => {
                                 const data = filterData(searchText,resDataAll);
@@ -148,10 +148,11 @@ const Body = () => {
                               </>
                             
                             {/* write logic for no rest found */}
-                              <div className="flex flex-wrap  my-1 m-auto  place-content-center  gap-4 border-2 w-5/6  border-yellow-500">
+                              <div className=" flex flex-wrap   my-1 m-auto  place-content-center  gap-12 mt-3 pb-16
+                               w-5/6 ">
                                 {
                                       resDataFiltered.map((restraunt )=> (
-                                        <Link className="no-underline text-black" key={restraunt.info.id} to = {"/restaurant/" + restraunt.info.id}>
+                                        <Link className="no-underline text-black " key={restraunt.info.id} to = {"/restaurant/" + restraunt.info.id}>
 
                                           {/* if the restraunt is promoted then add a promoted label to it  */}
                                        {  (restraunt?.info?.promoted) ? <RestrauntCardPromoted resData={restraunt.info}/> :
