@@ -31,7 +31,7 @@ function MenuItem({item}) {
         
                 <div className="w-40 h-40  rounded-2xl ">
                   <div className='absolute'>
-                    {(!MENU_IMG+item.imageId)? <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg "  onClick={()=>handleAddItem(item)}   >Add +</button>: <button  style={{display:'none'}} onClick={()=>handleAddItem(item)}   >Add +</button>}
+                    { <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg "  onClick={()=>handleAddItem(item)}   >Add +</button>}
                    
                   </div>
                  { (!MENU_IMG+item.imageId)?<img src={MENU_IMG + item.imageId} className='rounded-2xl w-full h-full shadow-md' />:<img src={MENU_IMG + item.imageId} style={{display:'none'}} />}

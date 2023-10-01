@@ -1,5 +1,7 @@
 
-import Restrauntcard ,{withPromotedLabel} from "./Restrauntcard";
+// import Restrauntcard ,{withPromotedLabel} from "./Restrauntcard";
+import Restrauntcard  from "./Restrauntcard";
+
 import resDataa from "../../utils/mockData";
 import {useState,useEffect,useContext} from "react";
 import Shimmer from "./Shimmer";
@@ -31,7 +33,7 @@ const Body = () => {
     const [searchText,setSearchText] =useState([])
 
 
-        const RestrauntCardPromoted = withPromotedLabel(Restrauntcard);
+        // const RestrauntCardPromoted = withPromotedLabel(Restrauntcard);
     //empty dependency array =>once after Every render 
     // dep array [searchTeaxt] => once after initial render + everytime after my searchText Changes 
 
@@ -155,9 +157,9 @@ const Body = () => {
                                         <Link className="no-underline text-black " key={restraunt.info.id} to = {"/restaurant/" + restraunt.info.id}>
 
                                           {/* if the restraunt is promoted then add a promoted label to it  */}
-                                       {  (restraunt?.info?.promoted) ? <RestrauntCardPromoted resData={restraunt.info}/> :
+                                       {/* {  (restraunt?.info?.promoted) ? <RestrauntCardPromoted resData={restraunt.info}/> : */}
                                         <Restrauntcard resData={restraunt.info} />
-                                      }
+                                      
 
                                          </Link>
                                         )       )
